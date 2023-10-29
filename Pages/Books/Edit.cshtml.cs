@@ -31,7 +31,13 @@ namespace MediiDeProgramare_MesesanDaria_Lab2.Pages.Books
             }
 
 
-            Book = await _context.Book.Include(b => b.Publisher).Include(b => b.BookCategories).ThenInclude(b => b.Category).AsNoTracking().FirstOrDefaultAsync(m => m.ID == id);
+            Book = await _context.Book
+                .Include(b => b.Publisher)
+                .Include(b => b.Author)
+                .Include(b => b.BookCategories)
+                .ThenInclude(b => b.Category)
+                .AsNoTracking()
+                .FirstOrDefaultAsync(m => m.ID == id);
 
             if (Book == null)
             {
@@ -41,7 +47,7 @@ namespace MediiDeProgramare_MesesanDaria_Lab2.Pages.Books
             PopulateAssignedCategoryData(_context, Book);
 
             ViewData["PublisherID"] = new SelectList(_context.Set<Publisher>(), "ID","PublisherName");
-            ViewData["AuthorID"] = new SelectList(_context.Set<Author>(), "ID","AuthorName");
+            ViewData["AuthorID"] = new SelectList(_context.Set<Author>(), "ID","FullName");
 
             return Page();
         }
@@ -72,7 +78,7 @@ namespace MediiDeProgramare_MesesanDaria_Lab2.Pages.Books
             {
                 UpdateBookCategories(_context, selectedCategories, bookToUpdate);
                 await _context.SaveChangesAsync();
-                return RedirectToPage("Book/Index");
+                return RedirectToPage("./Index");
             }
             //Apelam UpdateBookCategories pentru a aplica informatiile din checkboxuri la entitatea Books care
             //este editata
