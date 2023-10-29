@@ -9,8 +9,9 @@ namespace MediiDeProgramare_MesesanDaria_Lab2.Models
         public int ID { get; set; }
         [Display(Name = "Book Title")]
         public string Title { get; set; }
-        public int AuthorID { get; set; }  // Cheie străină
-        public Author Author { get; set; } // Proprietate de navigare către Authors
+        public int? AuthorID { get; set; }  
+        public Author? Author { get; set; } 
+
         [Column(TypeName = "decimal(6, 2)")]
         public decimal Price { get; set; }
 
