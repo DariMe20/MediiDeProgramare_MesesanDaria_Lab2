@@ -29,7 +29,7 @@ namespace MediiDeProgramare_MesesanDaria_Lab2.Pages.Books
                 return NotFound();
             }
 
-            Book = await _context.Book.Include(b => b.Author).FirstOrDefaultAsync(m => m.ID == id);
+            Book = await _context.Book.Include(b => b.Author).Include(b => b.Publisher).FirstOrDefaultAsync(m => m.ID == id);
 
             if (Book == null)
             {
