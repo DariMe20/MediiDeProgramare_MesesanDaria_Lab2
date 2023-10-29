@@ -4,6 +4,7 @@ using MediiDeProgramare_MesesanDaria_Lab2.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MediiDeProgramare_MesesanDaria_Lab2.Migrations
 {
     [DbContext(typeof(MediiDeProgramare_MesesanDaria_Lab2Context))]
-    partial class MediiDeProgramare_MesesanDaria_Lab2ContextModelSnapshot : ModelSnapshot
+    [Migration("20231029101802_BookCategory")]
+    partial class BookCategory
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -51,13 +53,13 @@ namespace MediiDeProgramare_MesesanDaria_Lab2.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"), 1L, 1);
 
-                    b.Property<int>("AuthorID")
+                    b.Property<int?>("AuthorID")
                         .HasColumnType("int");
 
                     b.Property<decimal>("Price")
                         .HasColumnType("decimal(6,2)");
 
-                    b.Property<int>("PublisherID")
+                    b.Property<int?>("PublisherID")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("PublishingDate")
@@ -137,15 +139,11 @@ namespace MediiDeProgramare_MesesanDaria_Lab2.Migrations
                 {
                     b.HasOne("MediiDeProgramare_MesesanDaria_Lab2.Models.Author", "Author")
                         .WithMany("Books")
-                        .HasForeignKey("AuthorID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("AuthorID");
 
                     b.HasOne("MediiDeProgramare_MesesanDaria_Lab2.Models.Publisher", "Publisher")
                         .WithMany("Books")
-                        .HasForeignKey("PublisherID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("PublisherID");
 
                     b.Navigation("Author");
 
