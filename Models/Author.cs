@@ -10,7 +10,7 @@ namespace MediiDeProgramare_MesesanDaria_Lab2.Models
  
         public ICollection<Book>? Books { get; set; } //navigation property
 
-        [Display(Name = "Author")]
+        [Display(Name = "Author Full Name")]
         public string FullName
         {
             get
