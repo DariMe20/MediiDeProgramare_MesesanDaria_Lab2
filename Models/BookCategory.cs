@@ -1,4 +1,6 @@
-﻿namespace MediiDeProgramare_MesesanDaria_Lab2.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace MediiDeProgramare_MesesanDaria_Lab2.Models
 {
     public class BookCategory
     {

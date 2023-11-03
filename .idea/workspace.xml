@@ -26,9 +26,9 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "Laborator3",
     "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/DARIA/1.FSEGA/AN_3/Medii_de_programare/MediiDeProgramare_MesesanDaria_Lab2",
+    "last_opened_file_path": "C:/xampp/htdocs/LABORATOARE/Laborator4",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -43,6 +43,7 @@
       <workItem from="1698158034305" duration="128000" />
       <workItem from="1698158176245" duration="7000" />
       <workItem from="1698158197512" duration="68000" />
+      <workItem from="1698739329977" duration="138000" />
     </task>
     <servers />
   </component>

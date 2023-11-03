@@ -1,4 +1,6 @@
-﻿namespace MediiDeProgramare_MesesanDaria_Lab2.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace MediiDeProgramare_MesesanDaria_Lab2.Models
 {
     public class Author
     {
@@ -8,6 +10,7 @@
  
         public ICollection<Book>? Books { get; set; } //navigation property
 
+        [Display(Name = "Author")]
         public string FullName
         {
             get
