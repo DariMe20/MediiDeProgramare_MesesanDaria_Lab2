@@ -6,6 +6,6 @@ namespace MediiDeProgramare_MesesanDaria_Lab2.Models
     {
         public int ID { get; set; }
         public string CategoryName { get; set; }
-        public ICollection<BookCategory>? BookCategories { get; set; }
+        public ICollection<BookCategory>? BookCategory { get; set; }
     }
 }

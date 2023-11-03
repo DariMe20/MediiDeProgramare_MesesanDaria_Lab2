@@ -34,7 +34,7 @@ namespace MediiDeProgramare_MesesanDaria_Lab2.Models
             }
             var selectedCategoriesHS = new HashSet<string>(selectedCategories);
             var bookCategories = new HashSet<int>
-            (bookToUpdate.BookCategories.Select(c => c.Category.ID));
+            (bookToUpdate.BookCategories.Select(c => c.CategoryID));
             foreach (var cat in context.Category)
             {
                 if (selectedCategoriesHS.Contains(cat.ID.ToString()))

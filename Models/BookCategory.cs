@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using MediiDeProgramare_MesesanDaria_Lab2.Models.ViewModels;
+using System.ComponentModel.DataAnnotations;
 
 namespace MediiDeProgramare_MesesanDaria_Lab2.Models
 {
