@@ -10,9 +10,9 @@ namespace MediiDeProgramare_MesesanDaria_Lab2.Models
         [Display(Name = "Book Title")]
         public string Title { get; set; }
         public Author? Author { get; set; }
-        
+
         public int AuthorID { get; set; }
-       
+
         [Column(TypeName = "decimal(6, 2)")]
         public decimal Price { get; set; }
 
@@ -23,7 +23,9 @@ namespace MediiDeProgramare_MesesanDaria_Lab2.Models
         public Publisher? Publisher { get; set; }
         [Display(Name = "Book Category")]
         public ICollection<BookCategory>? BookCategories { get; set; }
-    } 
+
+        public Borrowing? Borrowing { get; set; }
+    }
 }
 
 
