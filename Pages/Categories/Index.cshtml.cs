@@ -8,9 +8,11 @@ using Microsoft.EntityFrameworkCore;
 using MediiDeProgramare_MesesanDaria_Lab2.Data;
 using MediiDeProgramare_MesesanDaria_Lab2.Models;
 using MediiDeProgramare_MesesanDaria_Lab2.Models.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 
 namespace MediiDeProgramare_MesesanDaria_Lab2.Pages.Categories
 {
+    [Authorize(Roles = "Admin")]
     public class IndexModel : PageModel
     {
         private readonly MediiDeProgramare_MesesanDaria_Lab2.Data.MediiDeProgramare_MesesanDaria_Lab2Context _context;
